@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ScriptPy - Professional Python automation solutions for small businesses. File organization, data processing, and workflow automation services.">
     <title>ScriptPy - Python Automation Solutions</title>
+    <link rel="icon" type="image/png" href="../Logo for ScriptPy Tech Business - Python Snake.png">
+    <link rel="preload" href="../Logo for ScriptPy Tech Business - Python Snake.png" as="image">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="ScriptPy - Python Automation Solutions">
+    <meta property="og:description" content="Professional Python automation solutions for small businesses. File organization, data processing, and workflow automation services.">
+    <meta property="og:image" content="../Logo for ScriptPy Tech Business - Python Snake.png">
+    <meta property="og:url" content="https://scriptpy.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScriptPy - Python Automation Solutions">
+    <meta name="twitter:description" content="Professional Python automation solutions for small businesses.">
+    <meta name="twitter:image" content="../Logo for ScriptPy Tech Business - Python Snake.png">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -34,14 +47,26 @@
             text-align: center; 
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+        }
+        
         .logo { 
             font-size: clamp(2.5rem, 5vw, 4rem); 
-            font-weight: 700; 
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 800; 
+            color: var(--white);
+            margin: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            letter-spacing: -0.02em;
         }
         
         .tagline { 
@@ -53,20 +78,28 @@
         
         .main { padding: 5rem 0; background: var(--light-bg); }
         
-        .intro { text-align: center; margin-bottom: 5rem; }
-        .intro h2 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+        .section { padding: 4rem 0; }
+        .section h2 { 
+            text-align: center; 
+            font-size: clamp(2rem, 4vw, 2.5rem); 
+            margin-bottom: 3rem; 
+            color: var(--primary-color);
+        }
+        
+        .intro { text-align: center; margin-bottom: 3rem; }
         .intro p { font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 700px; margin: 0 auto; }
         
         .services { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 2.5rem; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1.5rem; 
             margin: 4rem 0; 
+            justify-items: center;
         }
         
         .service { 
             background: var(--white); 
-            padding: 2.5rem; 
+            padding: 2rem; 
             border-radius: 12px; 
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -86,7 +119,88 @@
         
         .service p { line-height: 1.7; }
         
-        .contact { 
+        .projects { 
+            background: var(--white); 
+        }
+        
+        .project-card { 
+            background: var(--light-bg); 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .project-title { 
+            color: var(--primary-color); 
+            font-size: 1.8rem; 
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-links { 
+            margin-top: 2rem; 
+            display: flex; 
+            gap: 1rem; 
+            flex-wrap: wrap;
+        }
+        
+        .project-btn { 
+            display: inline-block; 
+            background: var(--primary-color); 
+            color: var(--white); 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .project-btn:hover { 
+            background: var(--accent-color); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project-btn.github { 
+            background: var(--primary-color); 
+        }
+        
+        .project-btn.github:hover { 
+            background: var(--accent-color); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project-btn.custom { 
+            background: var(--accent-color); 
+            font-weight: 600;
+        }
+        
+        .project-btn.custom:hover { 
+            background: var(--accent-hover); 
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .project-features { 
+            list-style: none; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 0.5rem; 
+            margin: 1.5rem 0;
+        }
+        
+        .project-features li { 
+            padding: 0.25rem 0; 
+            color: var(--text-color);
+        }
+        
+        footer { 
             background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
             color: var(--white); 
             padding: 4rem 0; 
@@ -112,18 +226,62 @@
             box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
         }
         
+        .btn:focus,
+        .project-btn:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        @media (max-width: 1024px) {
+            .services { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+        
         @media (max-width: 768px) {
             .header { padding: 2rem 0; }
             .main { padding: 3rem 0; }
-            .services { gap: 2rem; }
+            .services { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
             .service { padding: 2rem; }
+            .section { padding: 3rem 0; }
+            
+            .logo-container { 
+                flex-direction: column; 
+                gap: 0.5rem; 
+            }
+            
+            .logo-img { 
+                width: 50px; 
+                height: 50px; 
+            }
+            
+            .project-links { 
+                flex-direction: column; 
+                align-items: center;
+            }
+            
+            .project-btn { 
+                width: 100%; 
+                max-width: 250px; 
+                text-align: center;
+            }
+            
+            .project-features { 
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">ScriptPy</h1>
+            <div class="logo-container">
+                <img src="../Logo for ScriptPy Tech Business - Python Snake.png" alt="ScriptPy logo with Python snake design" class="logo-img">
+                <h1 class="logo">ScriptPy</h1>
+            </div>
             <p class="tagline">Professional Python Automation Solutions for Small Businesses</p>
         </div>
     </header>
@@ -135,7 +293,7 @@
                 <p>Save time and reduce manual work with custom Python automation scripts tailored to your business needs</p>
             </section>
 
-            <section class="services">
+            <section class="services section">
                 <div class="service">
                     <h3>📁 File Organization & Management</h3>
                     <p>Automatically sort and organize thousands of files by type, date, size, or custom criteria. Transform chaotic folders into organized systems in minutes, not hours.</p>
@@ -152,7 +310,40 @@
         </div>
     </main>
 
-    <footer class="contact">
+    <section class="projects section">
+        <div class="container">
+            <h2>Open Source Projects</h2>
+            <div class="project-card">
+                <h3 class="project-title">
+                    🔐 ScriptPy Password Generator
+                </h3>
+                <p>A professional password generator built for businesses and individuals. Features customizable length, multiple character types, and bulk generation capabilities.</p>
+                
+                <ul class="project-features">
+                    <li>✅ Customizable length (8-32 characters)</li>
+                    <li>✅ Multiple character type options</li>
+                    <li>✅ Bulk password generation</li>
+                    <li>✅ Professional interface</li>
+                    <li>✅ Zero external dependencies</li>
+                    <li>✅ Complete input validation</li>
+                </ul>
+                
+                <div class="project-links">
+                    <a href="https://github.com/scriptpy/scriptpy-password-generator" class="project-btn github" target="_blank" rel="noopener noreferrer">
+                        📂 View on GitHub
+                    </a>
+                    <a href="https://github.com/scriptpy/scriptpy-password-generator/archive/refs/heads/main.zip" class="project-btn" target="_blank" rel="noopener noreferrer">
+                        ⬇️ Download Tool
+                    </a>
+                    <a href="mailto:george@scriptpy.com?subject=Custom Password Generator Request&body=Hi George,%0D%0A%0D%0AI'm interested in a custom version of your password generator with the following features:%0D%0A%0D%0A- [Describe your requirements here]%0D%0A%0D%0AThanks!" class="project-btn custom" target="_blank" rel="noopener noreferrer">
+                        🎯 Request Custom Version
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <h2>Ready to Automate Your Business?</h2>
             <p>Let's discuss how Python automation can save you time and increase productivity</p>
